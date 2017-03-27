@@ -3,6 +3,7 @@
  */
 
 'use strict';
+//this file sets all the global url in this application
 
 var errors = require('./components/errors');
 var auth = require('./auth/auth.service');
@@ -10,7 +11,8 @@ var path = require('path');
 
 module.exports = function(app) {
 
-  // Insert routes below
+  //this maps all the routes to the file in /api/user folder
+    //all urls start with /api/users
   app.use('/api/users', require('./api/user'));
   app.use('/auth', require('./auth'));
   app.post('/forgotpassword', require('./forgotpassword').reset);
