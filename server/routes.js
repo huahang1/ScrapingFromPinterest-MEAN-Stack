@@ -14,6 +14,8 @@ module.exports = function(app) {
   //this maps all the routes to the file in /api/user folder
     //all urls start with /api/users
   app.use('/api/users', require('./api/user'));
+  app.use('/api/look',require('./api/look'));
+    app.use('/api/links',require('./api/imgScraper'));
   app.use('/auth', require('./auth'));
   app.post('/forgotpassword', require('./forgotpassword').reset);
 
