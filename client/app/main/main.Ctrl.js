@@ -51,7 +51,7 @@
               $scope.look.link = '';
               $scope.gotScrapeResults = false;
           }).finally(function () {
-              $scope.loading = true;
+              $scope.loading = false;
               $scope.uploadLookForm = false;
           });
       });

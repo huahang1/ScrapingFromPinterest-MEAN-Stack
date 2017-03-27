@@ -1,9 +1,11 @@
 'use strict';
 
+var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
 
 exports.list =function (url,cb) {
+
     request(url, function (error,resp,body) {
 
         if (error){
@@ -14,8 +16,9 @@ exports.list =function (url,cb) {
             var $ = cheerio.load(body);
             var pin = {};
             var $url = url;
-            var $img = $('.heightContainer img').attr('src');
-            var $desc = $('.heightContainer img').attr('alt');
+            var img = $("meta[itemprop ='image']").get(1);
+            var $img = $(img).attr('content');
+            var $desc = $("meta[itemprop = 'text']").attr('content');
 
             console.log($img + 'pin url');
 
@@ -25,6 +28,7 @@ exports.list =function (url,cb) {
                 desc: $desc
             }
 
+            console.log('scraped: ', pin);
             cb(pin);
         }
     })
