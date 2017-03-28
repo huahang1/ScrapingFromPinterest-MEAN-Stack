@@ -16,11 +16,17 @@ exports.list =function (url,cb) {
             var $ = cheerio.load(body);
             var pin = {};
             var $url = url;
-            var img = $("meta[itemprop ='image']").get(1);
-            var $img = $(img).attr('content');
-            var $desc = $("meta[itemprop = 'text']").attr('content');
 
-            console.log($img + 'pin url');
+            //grab the img source directly
+            var $img = $('img').attr('src');
+            console.log('img: ', $img);
+
+            //grab the description from the alternative attribution
+            var $desc = $('img').attr('alt');
+
+            console.log('desc: ', $desc);
+
+            console.log($img + ' pin url');
 
             var pin = {
                 img:$img,
@@ -29,6 +35,7 @@ exports.list =function (url,cb) {
             }
 
             console.log('scraped: ', pin);
+
             cb(pin);
         }
     })

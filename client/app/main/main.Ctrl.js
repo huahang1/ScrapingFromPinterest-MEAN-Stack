@@ -33,10 +33,17 @@
 
     //watch for changes in URL, Scrape and Display Results
       $scope.$watch('look.link',function (newVal,oldVal) {
+
+          console.log('newVal: ', newVal);
+
           if (newVal.length > 5){
             $scope.loading = true;
+            console.log('loading works');
           }
-          $http.post('/api/link/scrape',{
+
+          console.log('$scope.look.link: ', $scope.look.link);
+
+          $http.post('/api/links/scrape',{
             url:$scope.look.link
           }).then(function (data) {
               console.log('data from mainCtrl.js at $watch part: ',data);
