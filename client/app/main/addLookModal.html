@@ -11,12 +11,14 @@
 
             <div class="modal-body" ng-show="scrapePostForm">
                 <form ng-submit="addScrapePost()" style="margin-top: 30px">
+
                     <h3>Find a Look</h3>
 
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Title" ng-model="look.title">
                     </div>
 
+                    <!--bind the look.link to ng-model and apply $watch function to this part-->
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Link URL (Pinterest)" ng-model="look.link" ng-disabled="gotScrapeResults">
                     </div>
