@@ -7,13 +7,16 @@
     .module('app')
     .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$scope', '$state', 'Auth','$modal','$http'];
+    MainCtrl.$inject = ['$scope', '$state', 'Auth','$modal','looksAPI','scrapeAPI','$alert'];
 
-  function MainCtrl($scope, $state, Auth,$modal,$http) {
+  function MainCtrl($scope, $state, Auth,$modal,looksAPI,scrapeAPI,$alert) {
 
     $scope.user = Auth.getCurrentUser();
 
     $scope.look = {};
+
+    //define an array of looks to show all looks
+    $scope.looks = [];
     
     //this part is used to decide whether to show initial contents
     $scope.scrapePostForm = true;
@@ -22,6 +25,24 @@
     $scope.showScrapeDetails = false;
     $scope.gotScrapeResults = false;
     $scope.loading = false;
+
+    var alertSuccess = $alert({
+        title:'Success',
+        content:'New Look added',
+        placement:'top-right',
+        container:'#alertContainer',
+        type:'success',
+        duration:8
+    });
+
+    var alertFail = $alert({
+        title:'Not saved',
+        content:'New Look failed to save',
+        placement:'top-right',
+        container:'#alertContainer',
+        type:'warning',
+        duration:8
+    });
     
     var myModal = $modal({
       scope:$scope, 
@@ -31,22 +52,28 @@
     $scope.showModal = function () {
         myModal.$promise.then(myModal.show);
     };
+    
+    looksAPI.getAllLooks()
+        .then(function (data) {
+            console.log(data);
+            $scope.looks = data.data;
+        })
+        .catch(function (err) {
+            console.log('failed to get looks: ', err);
+        });
 
       $scope.$watch('look.link',function (newVal,oldVal) {
 
           console.log('newVal: ', newVal);
 
           if (newVal.length > 5) {
-
               $scope.loading = true;
 
-              console.log('loading works');
+              var link = {url:$scope.look.link};
 
-              console.log('$scope.look.link: ', $scope.look.link);
-
-              $http.post('/api/links/scrape', {
-                  url: $scope.look.link
-              }).then(function (data) {
+              //refactor the $http thing
+              scrapeAPI.getScrapeDetails(link)
+                  .then(function (data) {
                   console.log('data from mainCtrl.js at $watch part: ', data);
                   $scope.showScrapeDetails = true;
                   $scope.gotScrapeResults = true;
@@ -84,17 +111,20 @@
 
         console.log('before http post');
 
-        $http.post('/api/look/scrapeUpload',look)
+        looksAPI.createScrapeLook(look)
             .then(function (data) {
                 console.log('scrapeUpload works');
+                alertSuccess.show();
                 $scope.showScrapeDetails = false;
                 $scope.gotScrapeResults = false;
                 $scope.look.title = '';
                 $scope.look.link = '';
+                $scope.looks.splice(0,0,data.data);
                 console.log('data: ', data);
             })
             .catch(function () {
                 console.log('failed to post');
+                alertFail.show();
                 $scope.showScrapeDetails = false;
             });
     }

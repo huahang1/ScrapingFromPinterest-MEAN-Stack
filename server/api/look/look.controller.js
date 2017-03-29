@@ -5,6 +5,27 @@ var Look = require('./look.model');
 var path = require('path');
 var utils = require('../../utils/utils.js');
 
+exports.allLooks = function (req,res) {
+
+    Look.find({})
+        .sort({
+            createTime: -1
+        })
+        .exec(function (err,looks) {
+
+            if (err){
+                return handleError(res, err);
+            }
+            if (!looks){
+                return res.sendStatus(404);
+            }
+
+            console.log('looks: ', looks);
+
+             return res.json(looks);
+        })
+};
+
 exports.scrapeUpload = function (req,res) {
 
     console.log('receive request from scrapeUpload');
@@ -33,8 +54,12 @@ exports.scrapeUpload = function (req,res) {
             }else{
                 console.log('successfully post saved');
                 console.log(item);
-                res.status(200).json(item);
+                res.json(item);
             }
         });
     });
+}
+
+function handleError(res,err) {
+    return res.send(500,err);
 }
