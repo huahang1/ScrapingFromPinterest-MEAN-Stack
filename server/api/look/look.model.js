@@ -31,4 +31,4 @@ var LookSchema = new Schema({
     }
 });
 
-module.exports = mongoose.module('Look',LookSchema);
+module.exports = mongoose.model('Look',LookSchema);

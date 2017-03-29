@@ -3,6 +3,13 @@ var fs = require('fs');
 var request = require('request');
 
 exports.downloadURI = function (url,filename,callback) {
+
+    console.log('calling downloadURI in utils');
+
+    console.log('url in utils: ', url);
+
+    console.log('filename in utils: ', filename);
+
     request(url)
         .pipe(fs.createWriteStream(filename))
         .on('close',function () {

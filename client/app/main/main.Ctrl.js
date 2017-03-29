@@ -30,9 +30,8 @@
     
     $scope.showModal = function () {
         myModal.$promise.then(myModal.show);
-    }
+    };
 
-    //watch for changes in URL, Scrape and Display Results
       $scope.$watch('look.link',function (newVal,oldVal) {
 
           console.log('newVal: ', newVal);
@@ -40,6 +39,7 @@
           if (newVal.length > 5) {
 
               $scope.loading = true;
+
               console.log('loading works');
 
               console.log('$scope.look.link: ', $scope.look.link);
@@ -55,7 +55,7 @@
                   $scope.look.description = data.data.desc;
               }).catch(function (data) {
                   console.log('failed to return from scrape');
-                  $scope.loading = true;
+                  $scope.loading = false;
                   $scope.look.link = '';
                   $scope.gotScrapeResults = false;
               }).finally(function () {
@@ -65,7 +65,11 @@
           }
       });
 
+
     $scope.addScrapePost = function () {
+
+        console.log('addScrapePost works');
+
         var look={
             description: $scope.look.description,
             title:$scope.look.title,
@@ -74,9 +78,15 @@
             email:$scope.user.email,
             name:$scope.user.name,
             _creator: $scope.user._id
-        }
+        };
+
+        console.log('look: ', look);
+
+        console.log('before http post');
+
         $http.post('/api/look/scrapeUpload',look)
             .then(function (data) {
+                console.log('scrapeUpload works');
                 $scope.showScrapeDetails = false;
                 $scope.gotScrapeResults = false;
                 $scope.look.title = '';
@@ -88,6 +98,5 @@
                 $scope.showScrapeDetails = false;
             });
     }
-
   }
 })();
