@@ -2,34 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e157dbd-cfd2-47fa-95bd-b6908eae781d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/uploads/9My73sa2KrhkysuGNYCNUXzHhZO7l6iZ.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/assets/images/uploads/A2FMwH6asbTt7CjGdTOUNjEuOfoz8Ux4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/look/look.Ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/look/look.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/look/look_config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/look/look_detail_view.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/myLooks/edit_look_modal.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/myLooks/myLooks.Ctrl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/myLooks/myLooks.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/myLooks/myLooks.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/myLooks/myLooks_config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/comments/comment.controller.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/comments/comment.model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/api/comments/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/app/components/apiFactory/commentAPI.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/apiFactory/looksAPI.js" afterPath="$PROJECT_DIR$/client/app/components/apiFactory/looksAPI.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/components/navbar/navbar.html" afterPath="$PROJECT_DIR$/client/app/components/navbar/navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/main/addLookModal.html" afterPath="$PROJECT_DIR$/client/app/main/addLookModal.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/main/main.Ctrl.js" afterPath="$PROJECT_DIR$/client/app/main/main.Ctrl.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/main/main.css" afterPath="$PROJECT_DIR$/client/app/main/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/app/main/main.html" afterPath="$PROJECT_DIR$/client/app/main/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/index.html" afterPath="$PROJECT_DIR$/client/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/look/index.js" afterPath="$PROJECT_DIR$/server/api/look/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/look/look.controller.js" afterPath="$PROJECT_DIR$/server/api/look/look.controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/config/express.js" afterPath="$PROJECT_DIR$/server/config/express.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/routes.js" afterPath="$PROJECT_DIR$/server/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/api/comments/comment.controller.js" afterPath="$PROJECT_DIR$/server/api/comments/comment.controller.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -100,16 +75,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="look.controller.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/api/look/look.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4632">
-              <caret line="193" column="39" lean-forward="true" selection-start-line="193" selection-start-column="39" selection-end-line="193" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="looksAPI.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/apiFactory/looksAPI.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -120,10 +85,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="comment.model.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="comment.model.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/api/comments/comment.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="579">
+            <state relative-caret-position="531">
               <caret line="34" column="57" lean-forward="false" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
               <folding />
             </state>
@@ -143,8 +108,18 @@
       <file leaf-file-name="comment.controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/api/comments/comment.controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="531">
+              <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="commentAPI.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/components/apiFactory/commentAPI.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="504">
+              <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -201,6 +176,8 @@
         <option value="$PROJECT_DIR$/server/routes.js" />
         <option value="$PROJECT_DIR$/server/api/comments/index.js" />
         <option value="$PROJECT_DIR$/server/api/comments/comment.model.js" />
+        <option value="$PROJECT_DIR$/server/api/comments/comment.controller.js" />
+        <option value="$PROJECT_DIR$/client/app/components/apiFactory/commentAPI.js" />
       </list>
     </option>
   </component>
@@ -214,8 +191,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1" />
-    <option name="y" value="27" />
+    <option name="x" value="29" />
+    <option name="y" value="31" />
     <option name="width" value="1440" />
     <option name="height" value="795" />
   </component>
@@ -520,15 +497,15 @@
       <workItem from="1490631016668" duration="815000" />
       <workItem from="1490632043757" duration="6844000" />
       <workItem from="1490645949608" duration="31598000" />
-      <workItem from="1490814091359" duration="26882000" />
+      <workItem from="1490814091359" duration="27918000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66139000" />
+    <option name="totallyTimeSpent" value="67175000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="27" width="1440" height="795" extended-state="0" />
+    <frame x="29" y="31" width="1440" height="795" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24242425" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -560,13 +537,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/app/components/navbar/navbar.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/auth/user.Srvc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -924,14 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/api/comments/comment.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -950,8 +912,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/api/comments/comment.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
+        <state relative-caret-position="531">
           <caret line="34" column="57" lean-forward="false" selection-start-line="34" selection-start-column="57" selection-end-line="34" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/api/comments/comment.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="531">
+          <caret line="41" column="2" lean-forward="false" selection-start-line="41" selection-start-column="2" selection-end-line="41" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/apiFactory/commentAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
           <folding />
         </state>
       </provider>
