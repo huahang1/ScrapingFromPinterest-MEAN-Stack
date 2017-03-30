@@ -31,7 +31,7 @@
 
       <ul class="nav navbar-nav navbar-right" >
 
-        <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/mylooks')}">
+        <li ng-show="isLoggedIn()" ng-class="{active: isActive('/mylooks')}">
           <a ui-sref="mylooks" id="nav-internal">My Looks</a></li>
 
         <li ng-hide="isLoggedIn()" ng-class="{active: isActive('/signup')}">
@@ -42,7 +42,7 @@
 
         <li ng-show="isLoggedIn()">
           <img ng-src="{{getCurrentUser().gravatar}}" alt="" class="gravatar-image">
-          <p class="navbar-text">Hello {{ getCurrentUser().name }}</p>
+          <!--<p class="navbar-text">Hello {{ getCurrentUser().name }}</p>-->
         </li>
 
         <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}">
