@@ -17,7 +17,7 @@ exports.addComment = function (req,res) {
             return res.sendStatus(500);
         }else{
             console.log('comment: ', comment);
-            res.sendStatus(200).json(comment);
+            res.status(200).json(comment);
         }
     });
 };
@@ -37,6 +37,6 @@ exports.getComments=function (req,res) {
                 return res.sendStatus(404);
             }
             console.log('comments: ', comments);
-            return res.send(200).json(comments);
+            return res.status(200).json(comments);
         });
 };
