@@ -49,7 +49,7 @@
             gravatar:$scope.user.gravatar,
             comment:$scope.comment.body,
             lookId:$scope.id
-        }
+        };
         commentAPI.addComment(comment)
             .then(function (data) {
                 console.log('add comment successfully: ', data);
@@ -59,7 +59,32 @@
             .catch(function (err) {
                 console.log('failed to add comment: ', err);
             })
-    }
+    };
+
+    $scope.addVote=function (look) {
+        looksAPI.upVoteLook(look)
+            .then(function (data) {
+                console.log('data from addVote backend: ',data);
+                look.upVotes++;
+            })
+            .catch(function (err) {
+                if (err){
+                    console.log('failure occurs in addVote: ', err);
+                }
+            });
+    };
+
+    function addView() {
+        looksAPI.addView($scope.id)
+            .then(function (res) {
+                console.log('view added to Look: ', res);
+            })
+            .catch(function (err) {
+                if (err){
+                    console.log('failed to increment: ', err);
+                }
+            });
+    };
 
   }
 })();

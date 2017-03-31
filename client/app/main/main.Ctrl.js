@@ -69,7 +69,7 @@
             console.log('failed to get looks: ', err);
         });
 
-      $scope.$watch('look.link',function (newVal,oldVal) {
+    $scope.$watch('look.link',function (newVal,oldVal) {
 
           console.log('newVal: ', newVal);
 
@@ -134,7 +134,20 @@
                 alertFail.show();
                 $scope.showScrapeDetails = false;
             });
-    }
+    };
+
+    $scope.addVote = function (look) {
+        looksAPI.upVoteLook(look)
+            .then(function (data) {
+                console.log('data from addVote: ', data);
+                look.upVotes++;
+            })
+            .catch(function (err) {
+                if (err){
+                    console.log('failure adding upVotes');
+                }
+            });
+    };
 
     $scope.uploadPic = function (file) {
         Upload.upload({

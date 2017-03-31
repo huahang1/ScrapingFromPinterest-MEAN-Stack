@@ -10,6 +10,9 @@ router.post('/upload',auth.isAuthenticated(),controller.upload);
 
 router.put('/:id',auth.isAuthenticated(),controller.update);
 
+router.put('/upvote/:id',auth.isAuthenticated(),controller.addUpvote);
+router.put('/view/:id',controller.addView);
+
 router.get('/getAllLooks',controller.allLooks);
 router.get('/getUserLooks',controller.userLooks);
 

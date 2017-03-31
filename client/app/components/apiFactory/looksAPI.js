@@ -16,7 +16,9 @@
             getUpdateLook: getUpdateLook,
             updateLook:updateLook,
             popLooks:popLooks,
-            deleteLook:deleteLook
+            deleteLook:deleteLook,
+            upVoteLook:upVoteLook,
+            addView:addView
         });
         
         function getAllLooks() {
@@ -53,6 +55,14 @@
 
         function deleteLook(look) {
             return $http.delete('/api/look/' + look._id);
+        }
+
+        function upVoteLook(look) {
+            return $http.put('/api/look/upvote/' + look._id);
+        }
+
+        function addView(look) {
+            return $http.put('/api/look/view/' + look);
         }
     }
 })();
