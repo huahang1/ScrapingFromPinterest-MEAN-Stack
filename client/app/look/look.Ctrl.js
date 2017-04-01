@@ -17,7 +17,8 @@
       .then(function(data) {
         console.log(data);
         $scope.look = data.data;
-        // addView();
+        //this is used to increase the views of the specific picture
+        addView();
       }).catch(function (err) {
         console.log('failed to get look: ', err);
     });
