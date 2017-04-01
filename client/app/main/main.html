@@ -24,7 +24,7 @@
     </div>
 
     <!--Angular Grid-->
-    <div class="container">
+    <div class="container" infinite-scroll="nextPage()" infinite-scroll-disabled="busy || noMoreData" infinite-scroll-distance="0.1">
         <ul class="dynamic-grid angular-grid"
             angular-grid="looks"
             grid-width="275"

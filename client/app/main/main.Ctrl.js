@@ -27,6 +27,11 @@
     $scope.loading = false;
     $scope.picPreview = true;
 
+    $scope.busy=true;
+    $scope.allData = [];
+    var page = 0;
+    var step = 4;
+
     var alertSuccess = $alert({
         title:'Success',
         content:'New Look added',
@@ -63,11 +68,29 @@
     looksAPI.getAllLooks()
         .then(function (data) {
             console.log(data);
-            $scope.looks = data.data;
+            // $scope.looks = data.data;
+            $scope.allData = data.data;
+            $scope.nextPage();
+            $scope.busy = false;
         })
         .catch(function (err) {
             console.log('failed to get looks: ', err);
         });
+
+    //this is used to make the infinite scroll
+    $scope.nextPage = function () {
+        var lookLength = $scope.looks.length;
+        if ($scope.busy){
+            return;
+        }
+        $scope.busy = true;
+        $scope.looks = $scope.looks.concat($scope.allData.splice(page * step,  step));
+        page++;
+        $scope.busy = false;
+        if ($scope.looks.length === 0){
+            $scope.noMoreData = true;
+        }
+    };
 
     $scope.$watch('look.link',function (newVal,oldVal) {
 
